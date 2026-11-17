@@ -1,0 +1,91 @@
+{
+  "execution_classification": "CODE_EXECUTED",
+  "cases": [
+    {
+      "name": "anonymous order read denied",
+      "expected": 401,
+      "observed": 401,
+      "passed": true
+    },
+    {
+      "name": "anonymous access-request read denied",
+      "expected": 401,
+      "observed": 401,
+      "passed": true
+    },
+    {
+      "name": "anonymous payment route is explicitly disabled",
+      "expected": 410,
+      "observed": 410,
+      "passed": true
+    },
+    {
+      "name": "anonymous pipeline denied",
+      "expected": 401,
+      "observed": 401,
+      "passed": true
+    },
+    {
+      "name": "public role-selecting login retired",
+      "expected": 410,
+      "observed": 410,
+      "passed": true
+    },
+    {
+      "name": "anonymous tenant inventory denied",
+      "expected": 401,
+      "observed": 401,
+      "passed": true
+    },
+    {
+      "name": "anonymous verification records denied",
+      "expected": 401,
+      "observed": 401,
+      "passed": true
+    },
+    {
+      "name": "anonymous system node inventory denied",
+      "expected": 401,
+      "observed": 401,
+      "passed": true
+    },
+    {
+      "name": "customer cannot view global audit chain",
+      "expected": 403,
+      "observed": 403,
+      "passed": true
+    },
+    {
+      "name": "public offer catalogue allowed",
+      "expected": 200,
+      "observed": 200,
+      "passed": true
+    },
+    {
+      "name": "authenticated candidate intake accepted but not verified",
+      "expected": 202,
+      "observed": 202,
+      "passed": true
+    },
+    {
+      "name": "candidate publication is blocked",
+      "expected": 400,
+      "observed": 400,
+      "passed": true
+    },
+    {
+      "name": "authenticated access request fails closed without persistent storage",
+      "expected": 503,
+      "observed": 503,
+      "passed": true
+    },
+    {
+      "name": "payment checkout remains disabled even for authenticated users",
+      "expected": 410,
+      "observed": 410,
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "failures": []
+}

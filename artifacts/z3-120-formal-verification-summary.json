@@ -1,0 +1,37 @@
+{
+  "aggregation_name": "Z3_120_FORMAL_VERIFICATION_SUMMARY",
+  "commit_sha": "d86e3000e980a4ba6363e99bb918a782de215d20",
+  "timestamp": "2026-10-21T13:43:38.045Z",
+  "total_z3_executions": 0,
+  "expected_result_matches": 0,
+  "cleanroom_replays": 32,
+  "replay_matches": 32,
+  "distribution": {
+    "unsat": 0,
+    "sat": 0,
+    "unknown": 0,
+    "error": 32
+  },
+  "subsystems": {
+    "dfrl": {
+      "total_required": 88,
+      "executed": 0,
+      "sat_witnesses": 0,
+      "replays_matched": 0,
+      "root_hash": "0c1d0b052e64bae530ec5f336bac263894afb01fcd1219782dfab879620f1cd6",
+      "status": "FAILED"
+    },
+    "dh": {
+      "total_required": 32,
+      "executed": 0,
+      "expected_matches": 0,
+      "replays_matched": 32,
+      "sat_count": 0,
+      "unsat_count": 0,
+      "root_hash": "0142c06cedcb26a4ccd9faf4f0c7112186ee0a26d77b1cc022765792be92a13e",
+      "status": "FAILED"
+    }
+  },
+  "combined_root_sha256": "b5437a500576856e2060bacf96abbe8ad3e0d0e5c7b0b615e6015eed543429cd",
+  "activation_gate": "BLOCKED"
+}

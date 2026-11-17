@@ -1,0 +1,216 @@
+{
+  "schema_version": "1.0.0",
+  "status": "BLOCKED",
+  "reason": "Activation blocked until 120/120 formal verification and all 46 system gates have no failed, blocked, or external-provider-required gates.",
+  "corpus": {
+    "total_required": 120,
+    "dfrl_required": 88,
+    "dh_required": 32,
+    "executed": 0,
+    "deterministic_replays": 32,
+    "unknown": 0,
+    "errors": 32
+  },
+  "mandatory_gates": {
+    "total": 46,
+    "passed": 33,
+    "failed": 11
+  },
+  "gate_exceptions": [
+    {
+      "gate_number": 2,
+      "gate_id": "GATE-01",
+      "status": "FAIL",
+      "name": "Dependency Preflight Layer",
+      "details": {
+        "total_dependencies": 8,
+        "present": 5,
+        "missing": 1
+      }
+    },
+    {
+      "gate_number": 6,
+      "gate_id": "GATE-05",
+      "status": "FAIL",
+      "name": "Unit & Enterprise Invariant Test Suite",
+      "details": {
+        "total_tests": 30,
+        "passed_tests": 26,
+        "pass_rate": "100%"
+      }
+    },
+    {
+      "gate_number": 7,
+      "gate_id": "GATE-06",
+      "status": "FAIL",
+      "name": "DFRL 88-Operator Z3 SMT Formal Verification",
+      "details": {
+        "total_propositions": 88,
+        "attempted": 88,
+        "executed": 0,
+        "sat_witnesses_verified": 0,
+        "unsat_count": 0,
+        "authored_models_count": 20,
+        "generated_models_count": 68,
+        "solver_engine": "Microsoft Research Z3 WASM (z3-solver)",
+        "solver_version": "Microsoft Research Z3 WASM 5.2.0",
+        "root_sha256": "0c1d0b052e64bae530ec5f336bac263894afb01fcd1219782dfab879620f1cd6"
+      }
+    },
+    {
+      "gate_number": 8,
+      "gate_id": "GATE-07",
+      "status": "FAIL",
+      "name": "Cleanroom Deterministic Replay Verification",
+      "details": {
+        "total_operators_replayed": 88,
+        "replays_matched": 0,
+        "independent_contexts_reconstructed": 88,
+        "bitrot_divergence": 0
+      }
+    },
+    {
+      "gate_number": 9,
+      "gate_id": "GATE-08",
+      "status": "FAIL",
+      "name": "SMT Mutation, SHA-256 Tamper & Fail-Closed Tests",
+      "details": {
+        "smt_mutation_detected": false,
+        "smt_mutation_transition": "error -> error",
+        "z3_failure_injection_fail_closed": false,
+        "artifact_tamper_alarm_triggered": true,
+        "fail_closed_active": true
+      }
+    },
+    {
+      "gate_number": 10,
+      "gate_id": "GATE-09",
+      "status": "FAIL",
+      "name": "Daisy 54-Node Architecture CUJ Execution Coverage",
+      "details": {
+        "total_nodes": 54,
+        "registered_nodes": 54,
+        "instantiated_nodes": 45,
+        "reachable_nodes": 54,
+        "executed_nodes": 45,
+        "output_asserted_nodes": 45,
+        "evidence_generated_nodes": 45,
+        "unsatisfied_node_ids": [
+          "DN-03",
+          "DN-16",
+          "DN-21",
+          "DN-22",
+          "DN-23",
+          "DN-24",
+          "DN-26",
+          "DN-28",
+          "DN-44"
+        ],
+        "baseline_internal_18": 18,
+        "expanded_internal_33": 34,
+        "gateways_3": 2,
+        "policy_interlocks_1": 1
+      }
+    },
+    {
+      "gate_number": 12,
+      "gate_id": "GATE-11",
+      "status": "EXTERNAL_PROVIDER_REQUIRED",
+      "name": "Neon Persistence Gateway (payments excluded by release policy)",
+      "details": {
+        "paypal": {
+          "enabled": false,
+          "configured": false,
+          "authenticated": false,
+          "status": "DISABLED_BY_RELEASE_POLICY",
+          "network_requests_made": 0,
+          "credentials_required": false,
+          "claim_scope": "LOCAL"
+        },
+        "neon": {
+          "configured": false,
+          "connected": false,
+          "status": "EXTERNAL_PROVIDER_REQUIRED",
+          "claim_scope": "LOCAL"
+        },
+        "stripe": {
+          "status": "PROHIBITED_BLOCKED",
+          "policy": "Payment processing disabled in this release; catalog prices are metadata only"
+        }
+      }
+    },
+    {
+      "gate_number": 15,
+      "gate_id": "GATE-14",
+      "status": "BLOCKED",
+      "name": "Final Truth-Boundary Audit & Production Gate",
+      "details": {
+        "execution_id": "exec_pipeline_1792590217971",
+        "verdict": "BLOCKED_MISSING_EXTERNAL_CREDENTIALS",
+        "claim_scope": "LOCAL_VERIFIED / MODEL_VERIFIED",
+        "blockers_count": 6,
+        "blockers": [
+          "GATE-05 Enterprise invariant tests failed.",
+          "GATE-06 DFRL SMT formal proofs failed.",
+          "GATE-07 Deterministic replay divergence detected.",
+          "GATE-08 Mutation, failure injection, or tamper alarm failed.",
+          "GATE-09 Daisy 54-node CUJ coverage failed.",
+          "Environment is currently [LOCAL]. Production requires explicit SOLVEX_ENV=production opt-in, trusted OIDC, verified Neon schema/persistence, and operational recovery evidence. PayPal is disabled and is not required."
+        ]
+      }
+    },
+    {
+      "gate_number": 37,
+      "gate_id": "INV-22",
+      "status": "FAIL",
+      "name": "System Status API Endpoint Computes Real State",
+      "details": {
+        "status": "FAILED"
+      }
+    },
+    {
+      "gate_number": 41,
+      "gate_id": "INV-26",
+      "status": "FAIL",
+      "name": "Fail-Closed: Unauthorized Runtime Deployment Blocked",
+      "details": {
+        "status": "FAILED"
+      }
+    },
+    {
+      "gate_number": 42,
+      "gate_id": "INV-27",
+      "status": "FAIL",
+      "name": "Fail-Closed: Cross-Tenant Data Access Blocked",
+      "details": {
+        "status": "FAILED"
+      }
+    },
+    {
+      "gate_number": 44,
+      "gate_id": "INV-29",
+      "status": "FAIL",
+      "name": "Order Lifecycle State Machine Validates Transitions & Failures",
+      "details": {
+        "status": "FAILED"
+      }
+    },
+    {
+      "gate_number": 46,
+      "gate_id": "GATE-46",
+      "status": "FAIL",
+      "name": "Master Truth-Boundary & Proof Closure Gate",
+      "details": {
+        "total_preceding_gates": 45,
+        "preceding_passed": 33,
+        "preceding_failed": 10,
+        "preceding_non_passed": 12,
+        "external_boundaries_preserved": true,
+        "fail_closed_active": true
+      }
+    }
+  ],
+  "verification_root_sha256": "b5437a500576856e2060bacf96abbe8ad3e0d0e5c7b0b615e6015eed543429cd",
+  "source_commit_sha": "d86e3000e980a4ba6363e99bb918a782de215d20",
+  "generated_at": "2026-10-21T13:43:38.045Z"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "SOLVEX + Daisy Haminja Sovereign Enterprise OS",
+  "description": "Sovereign enterprise operating system integrating Daisy Haminja AI/UI/OS, SOLVEX governance engine, Uarefake marketplace, and formal verification suite.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
